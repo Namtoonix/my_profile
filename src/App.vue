@@ -1,10 +1,65 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <MainMenu :name="'Vũ Hoàng Nam'" :menuList="menuList" />
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
+
+<script lang="js">
+import MainMenu from "@/components/MainMenu.vue";
+import HomeIcon from "@/assets/home-icon.png";
+import HomeIconActive from "@/assets/home-icon-active.png";
+import AccountIcon from "@/assets/account-icon.png";
+import AccountIconActive from "@/assets/account-icon-active.png";
+import ResumeIcon from "@/assets/resume-icon.png";
+import ResumeIconActive from "@/assets/resume-icon-active.png";
+import MailIcon from "@/assets/mail-icon.png";
+import MailIconActive from "@/assets/mail-icon-active.png";
+
+const menuList = [
+  {
+    id: "home",
+    title: "Home",
+    path: "/",
+    icon: HomeIcon,
+    iconActive: HomeIconActive,
+  },
+  {
+    id: "about-me",
+    title: "About me",
+    path: "/about-me",
+    icon: AccountIcon,
+    iconActive: AccountIconActive,
+  },
+  {
+    id: "resume",
+    title: "Resume",
+    path: "/resume",
+    icon: ResumeIcon,
+    iconActive: ResumeIconActive,
+  },
+  {
+    id: "contact",
+    title: "Contact",
+    path: "/contact",
+    icon: MailIcon,
+    iconActive: MailIconActive,
+  },
+];
+
+export default {
+  components: {
+    MainMenu,
+  },
+  data() {
+    return {
+      menuList: menuList,
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -14,17 +69,13 @@
   text-align: center;
   color: #2c3e50;
 }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

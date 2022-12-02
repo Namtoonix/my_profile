@@ -1,18 +1,147 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div
+    class="home pl-[200px] w-full h-screen flex justify-center items-center before:absolute before:inset-0 before:bg-[#151515] before:opacity-50 before:content-['']"
+  >
+    <div class="z-[2]">
+      <h1 class="text-[62px] text-[#fff] font-[600] font-dancing">
+        Vũ Hoàng Nam
+      </h1>
+      <h3 class="text-[28px] text-white">
+        I'm a
+        <span class="font-[600]">Front-end Developer</span>
+        with
+        <span class="typed-text font-[600] border-b-[2px] border-b-[#00A3E1]">{{
+          typeValue
+        }}</span>
+        <span class="blinking-cursor">|</span>
+        <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
+      </h3>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
-@Options({
-  components: {
-    HelloWorld,
+<script>
+export default {
+  name: "typeWiriter",
+  data() {
+    return {
+      typeValue: "",
+      typeStatus: false,
+      displayTextArray: ["ReactJS", "NextJS", "VueJS", "Shopify Liquid"],
+      typingSpeed: 100,
+      erasingSpeed: 100,
+      newTextDelay: 2000,
+      displayTextArrayIndex: 0,
+      charIndex: 0,
+    };
   },
-})
-export default class HomeView extends Vue {}
+  created() {
+    setTimeout(this.typeText, this.newTextDelay + 200);
+  },
+  methods: {
+    typeText() {
+      if (
+        this.charIndex <
+        this.displayTextArray[this.displayTextArrayIndex].length
+      ) {
+        if (!this.typeStatus) this.typeStatus = true;
+        this.typeValue += this.displayTextArray[
+          this.displayTextArrayIndex
+        ].charAt(this.charIndex);
+        this.charIndex += 1;
+        setTimeout(this.typeText, this.typingSpeed);
+      } else {
+        this.typeStatus = false;
+        setTimeout(this.eraseText, this.newTextDelay);
+      }
+    },
+    eraseText() {
+      if (this.charIndex > 0) {
+        if (!this.typeStatus) this.typeStatus = true;
+        this.typeValue = this.displayTextArray[
+          this.displayTextArrayIndex
+        ].substring(0, this.charIndex - 1);
+        this.charIndex -= 1;
+        setTimeout(this.eraseText, this.erasingSpeed);
+      } else {
+        this.typeStatus = false;
+        this.displayTextArrayIndex += 1;
+        if (this.displayTextArrayIndex >= this.displayTextArray.length)
+          this.displayTextArrayIndex = 0;
+        setTimeout(this.typeText, this.typingSpeed + 1000);
+      }
+    },
+  },
+};
 </script>
+
+<style lang="scss" scoped>
+.home {
+  background-image: url("@/assets/home-bg.jpg");
+  background-size: cover;
+}
+
+h3 {
+  font-weight: normal;
+  span.typed-text {
+    color: #d2b94b;
+  }
+}
+
+// Cursor blinking CSS Starts...
+.blinking-cursor {
+  font-size: 32px;
+  color: #fff;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+@-moz-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+@-webkit-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+@-ms-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+@-o-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+// Cursor blinking CSS Ends...
+</style>
