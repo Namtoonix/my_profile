@@ -16,14 +16,18 @@
         v-slot="{ isActive }"
       >
         <div
-          class="flex items-center pl-[50px] py-[8px] border-b-[#202226] border-b-[1px]"
+          class="group flex items-center pl-[50px] h-[50px] border-b-[#202226] border-b-[1px]"
         >
           <img
             v-if="isActive"
             :src="menu.iconActive"
-            class="w-[20px] h-[20px]"
+            class="w-[20px] h-[20px] group-hover:w-[24px] group-hover:h-[24px]"
           />
-          <img v-else :src="menu.icon" class="w-[20px] h-[20px]" />
+          <img
+            v-else
+            :src="menu.icon"
+            class="w-[20px] h-[20px] group-hover:w-[24px] group-hover:h-[24px]"
+          />
           <p
             v-if="isActive"
             class="uppercase pl-[8px] text-[#fff] text-[12px] leading-[20px] font-[700]"
@@ -32,7 +36,7 @@
           </p>
           <p
             v-else
-            class="uppercase pl-[8px] text-[#777] text-[12px] leading-[20px] font-[700]"
+            class="uppercase pl-[8px] text-[#777] text-[12px] group-hover:text-[14px] group-hover:text-[#fff] leading-[20px] font-[700]"
           >
             {{ menu.title }}
           </p>
@@ -42,7 +46,7 @@
     <p
       class="flex w-full absolute bottom-0 text-[#777] text-[12px] mb-[16px] justify-center"
     >
-      2022 © Nam Vu by VueJS. <br />
+      2022 © NamToonix by VueJS. <br />
       All Right Reserved.
     </p>
   </div>
