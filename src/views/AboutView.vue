@@ -57,18 +57,58 @@
       </div>
       <div class="flex flex-col items-center">
         <h3
-          class="w-fit text-center text-white border-b-[2px] text-[22px] font-[600] my-[50px]"
+          class="w-fit text-center text-white border-b-[2px] text-[22px] font-[600] mt-[50px] mb-[20px] uppercase"
           :style="{ borderColor: $store.state.color }"
         >
           Technologies
         </h3>
-        <carousel :settings="settings" :breakpoints="breakpoints">
-          <slide v-for="slide in sliderList" :key="slide.id" class="w-1/4">
-            <div class="carousel__item w-full">
-              <img :src="slide.image" />
+        <agile :slidesToShow="4" :navButtons="false">
+          <div class="slide">
+            <img src="@/assets/react_logo.png" />
+          </div>
+          <div class="slide">
+            <img src="@/assets/typescript_logo.png" />
+          </div>
+          <div class="slide">
+            <img src="@/assets/next_logo.png" />
+          </div>
+          <div class="slide">
+            <img src="@/assets/vue_logo.png" />
+          </div>
+          <div class="slide">
+            <img src="@/assets/js_logo.png" />
+          </div>
+          <div class="slide">
+            <img src="@/assets/html_logo.png" />
+          </div>
+          <div class="slide">
+            <img src="@/assets/css_logo.png" />
+          </div>
+        </agile>
+      </div>
+      <div class="flex flex-col items-center">
+        <h3
+          class="w-fit text-center text-white border-b-[2px] text-[22px] font-[600] mt-[50px] mb-[20px] uppercase"
+          :style="{ borderColor: $store.state.color }"
+        >
+          Company
+        </h3>
+        <agile :slidesToShow="2" :navButtons="false" :infinite="false">
+          <div class="slide">
+            <div
+              class="flex min-h-full bg-white rounded-[12px] overflow-hidden p-[12px]"
+            >
+              <img src="@/assets/haravan_logo.jpg" />
             </div>
-          </slide>
-        </carousel>
+          </div>
+          <div class="slide h-full">
+            <div
+              class="flex items-center min-h-full bg-white rounded-[12px] overflow-hidden p-[12px]"
+            >
+              <img class="h-auto" src="@/assets/viking_logo.png" />
+            </div>
+          </div>
+        </agile>
       </div>
     </div>
   </div>
@@ -77,15 +117,7 @@
 <script lang="js">
 import axios from "axios";
 import store from "@/store";
-import { Carousel, Slide } from "vue3-carousel";
-
-import ReactLogo from "@/assets/react_logo.png";
-import TypescriptLogo from "@/assets/typescript_logo.png";
-import NextLogo from "@/assets/next_logo.png";
-import VueLogo from "@/assets/vue_logo.png";
-import JavascriptLogo from "@/assets/js_logo.png";
-import HtmlLogo from "@/assets/html_logo.png";
-import CssLogo from "@/assets/css_logo.png";
+import { VueAgile } from 'vue-agile'
 
 const infoList = [
   {
@@ -126,64 +158,17 @@ const infoList = [
   },
 ];
 
-const sliderList = [
-  {
-    id: "react_logo",
-    image: ReactLogo,
-  },
-  {
-    id: "typescript_logo",
-    image: TypescriptLogo,
-  },
-  {
-    id: "next_logo",
-    image: NextLogo,
-  },
-  {
-    id: "vue_logo",
-    image: VueLogo,
-  },
-  {
-    id: "js_logo",
-    image: JavascriptLogo,
-  },
-  {
-    id: "html_logo",
-    image: HtmlLogo,
-  },
-  {
-    id: "css_logo",
-    image: CssLogo,
-  },
-];
-
 const cvDownload = {
   url: "https://drive.google.com/file/d/1zS7LcijKvzyII4vQ6ejokrmHyTQl1hmM/view?usp=sharing",
   label: "Download Resume",
 };
 
 export default {
-  components: { Carousel, Slide },
+  components: { agile: VueAgile  },
   data() {
     return {
       infoList: infoList,
       cvDownload: cvDownload,
-      sliderList: sliderList,
-      settings: {
-        itemsToShow: 2,
-        itemsToScroll: 1,
-        snapAlign: "center",
-      },
-      breakpoints: {
-        700: {
-          itemsToShow: 3,
-          snapAlign: "center",
-        },
-        1024: {
-          itemsToShow: 4,
-          snapAlign: "start",
-        },
-      },
     };
   },
   methods: {
@@ -222,5 +207,12 @@ a {
 
 a:hover {
   background: var(--color-hover);
+}
+
+.agile {
+  width: 100%;
+  .slide {
+    padding: 30px;
+  }
 }
 </style>
