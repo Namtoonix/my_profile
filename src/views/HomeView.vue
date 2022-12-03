@@ -10,9 +10,11 @@
         I'm a
         <span class="font-[600]">Front-end Developer</span>
         with
-        <span class="typed-text font-[600] border-b-[2px] border-b-[#00A3E1]">{{
-          typeValue
-        }}</span>
+        <span
+          class="font-[600] border-b-[2px]"
+          :style="{ borderColor: $store.state.color }"
+          >{{ typeValue }}</span
+        >
         <span class="blinking-cursor">|</span>
         <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
       </h3>
@@ -27,7 +29,13 @@ export default {
     return {
       typeValue: "",
       typeStatus: false,
-      displayTextArray: ["ReactJS", "NextJS", "VueJS", "Shopify Liquid"],
+      displayTextArray: [
+        "ReactJS",
+        "NextJS",
+        "VueJS",
+        "Typescript",
+        "Shopify Liquid",
+      ],
       typingSpeed: 100,
       erasingSpeed: 100,
       newTextDelay: 2000,
@@ -83,9 +91,6 @@ export default {
 
 h3 {
   font-weight: normal;
-  span.typed-text {
-    color: #d2b94b;
-  }
 }
 
 // Cursor blinking CSS Starts...

@@ -1,9 +1,12 @@
 <template>
-  <div class="fixed top-0 bottom-0 left-0 w-[200px] bg-[#17181B] z-[9]">
+  <div
+    class="fixed top-0 bottom-0 left-0 w-[200px] bg-[#17181B] z-[9] min-h-[600px]"
+  >
     <div class="relative">
       <img src="@/assets/avatar.jpg" />
       <h3
-        class="bg-[#00A3E180] text-[#fff] font-[700] uppercase text-[20px] py-[10px] absolute bottom-0 left-0 right-0"
+        class="text-[#fff] font-[700] uppercase text-[20px] py-[10px] absolute bottom-0 left-0 right-0"
+        :style="{ backgroundColor: $store.getters.backgroundColor }"
       >
         {{ name }}
       </h3>

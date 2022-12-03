@@ -1,14 +1,20 @@
 <template>
-  <MainMenu :name="'Vũ Hoàng Nam'" :menuList="menuList" />
-  <router-view v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+  <div v-if="showLoading"><LoadingScreen /></div>
+  <div v-else>
+    <MainMenu :name="'Vũ Hoàng Nam'" :menuList="menuList" />
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <SettingLayout />
+  </div>
 </template>
 
 <script lang="js">
 import MainMenu from "@/components/MainMenu.vue";
+import LoadingScreen from "@/components/LoadingScreen.vue";
+import SettingLayout from "@/components/SettingLayout.vue";
 import HomeIcon from "@/assets/home-icon.png";
 import HomeIconActive from "@/assets/home-icon-active.png";
 import AccountIcon from "@/assets/account-icon.png";
@@ -52,18 +58,24 @@ const menuList = [
 export default {
   components: {
     MainMenu,
+    LoadingScreen,
+    SettingLayout,
   },
   data() {
     return {
       menuList: menuList,
+      showLoading: true,
     };
+  },
+  created() {
+    setTimeout(() => (this.showLoading = false), 2000);
   },
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
