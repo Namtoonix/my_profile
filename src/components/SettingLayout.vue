@@ -1,5 +1,5 @@
 <template>
-  <div class="settings fixed top-[10%] right-[10px] z-[10]">
+  <div class="settings fixed top-[50px] right-[10px] z-[10]">
     <div @click="showSetting = !showSetting" class="bg-white rounded-full">
       <img width="40" src="@/assets/setting-icon.png" />
     </div>

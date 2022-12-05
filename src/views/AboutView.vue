@@ -49,9 +49,9 @@
           <a
             :href="cvDownload.url"
             v-text="cvDownload.label"
-            @click.prevent="downloadCV(cvDownload)"
             class="flex w-fit border-[2px] px-[20px] py-[10px] hover:!text-white transition ease-in duration-300"
             :style="styleObject"
+            target="_blank"
           />
         </div>
       </div>
