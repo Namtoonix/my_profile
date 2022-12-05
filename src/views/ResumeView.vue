@@ -1,34 +1,32 @@
 <template>
-  <div class="home pl-[200px] w-full min-h-screen bg-[#2c2d2f]">
-    <div class="max-w-[1024px] mx-auto">
-      <h2
-        class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] text-[38px] font-[700] pt-[50px] mb-[50px]"
-        :style="{ color: $store.state.color }"
-      >
-        My Resume.
-      </h2>
-      <div class="flex flex-wrap">
-        <div class="w-1/2 pr-[16px]">
-          <h3
-            class="mx-auto w-fit text-white border-b-[2px] text-[22px] font-[600] mb-[20px] uppercase"
-            :style="{ borderColor: $store.state.color }"
-          >
-            Experience
-          </h3>
-          <div v-for="lineItem in experienceData" :key="lineItem.id">
-            <ResumeLine :data="lineItem" />
-          </div>
+  <div class="max-w-[1024px] mx-auto">
+    <h2
+      class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] sm:text-[38px] text-[28px] font-[700] pt-[50px] sm:mb-[50px] mb-[20px]"
+      :style="{ color: $store.state.color }"
+    >
+      My Resume.
+    </h2>
+    <div class="flex flex-wrap">
+      <div class="sm:w-1/2 w-full sm:pr-[16px]">
+        <h3
+          class="mx-auto w-fit text-white border-b-[2px] text-[22px] font-[600] mb-[20px] uppercase"
+          :style="{ borderColor: $store.state.color }"
+        >
+          Experience
+        </h3>
+        <div v-for="lineItem in experienceData" :key="lineItem.id">
+          <ResumeLine :data="lineItem" />
         </div>
-        <div class="w-1/2 pl-[16px]">
-          <h3
-            class="mx-auto w-fit text-white border-b-[2px] text-[22px] font-[600] mb-[20px] uppercase"
-            :style="{ borderColor: $store.state.color }"
-          >
-            Education
-          </h3>
-          <div v-for="lineItem in educationData" :key="lineItem.id">
-            <ResumeLine :data="lineItem" />
-          </div>
+      </div>
+      <div class="sm:w-1/2 w-full sm:pl-[16px]">
+        <h3
+          class="mx-auto w-fit text-white border-b-[2px] text-[22px] font-[600] mb-[20px] uppercase"
+          :style="{ borderColor: $store.state.color }"
+        >
+          Education
+        </h3>
+        <div v-for="lineItem in educationData" :key="lineItem.id">
+          <ResumeLine :data="lineItem" />
         </div>
       </div>
     </div>

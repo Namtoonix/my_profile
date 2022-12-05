@@ -1,12 +1,16 @@
 <template>
   <div v-if="showLoading"><LoadingScreen /></div>
   <div v-else>
-    <MainMenu :name="'Vũ Hoàng Nam'" :menuList="menuList" />
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <MainMenu :name="'Vu Hoang Nam'" :menuList="menuList" />
+    <div
+      class="sm:pl-[200px] w-full min-h-screen bg-[#2c2d2f] sm:px-0 px-[12px]"
+    >
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
     <SettingLayout />
   </div>
 </template>

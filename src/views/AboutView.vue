@@ -1,14 +1,14 @@
 <template>
-  <div class="home pl-[200px] w-full min-h-screen bg-[#2c2d2f]">
+  <div class="home">
     <div class="max-w-[1024px] mx-auto">
       <h2
-        class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] text-[38px] font-[700] pt-[50px] mb-[50px]"
+        class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] sm:text-[38px] text-[28px] font-[700] pt-[50px] sm:mb-[50px] mb-[20px]"
         :style="{ color: $store.state.color }"
       >
         About Me.
       </h2>
       <div class="flex flex-wrap">
-        <div class="w-2/3 pr-[32px]">
+        <div class="sm:w-2/3 w-full pr-[32px]">
           <h3 class="text-left text-[22px] font-[700] text-white mb-[20px]">
             Front-end Developer
           </h3>
@@ -31,7 +31,7 @@
             improve the environment, which is something I’m interested in.
           </p>
         </div>
-        <div class="w-1/3">
+        <div class="sm:w-1/3 w-full">
           <h3 class="text-left text-[22px] font-[700] text-white mb-[20px]">
             Personal Information
           </h3>
@@ -62,7 +62,7 @@
         >
           Technologies
         </h3>
-        <agile :slidesToShow="4" :navButtons="false">
+        <agile :options="myOptions">
           <div class="slide">
             <img src="@/assets/react_logo.png" />
           </div>
@@ -114,10 +114,10 @@
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import axios from "axios";
 import store from "@/store";
-import { VueAgile } from 'vue-agile'
+import { VueAgile } from "vue-agile";
 
 const infoList = [
   {
@@ -164,11 +164,29 @@ const cvDownload = {
 };
 
 export default {
-  components: { agile: VueAgile  },
+  components: { agile: VueAgile },
   data() {
     return {
       infoList: infoList,
       cvDownload: cvDownload,
+      myOptions: {
+        navButtons: false,
+        slidesToShow: 2,
+        responsive: [
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 900,
+            settings: {
+              slidesToShow: 4,
+            },
+          },
+        ],
+      },
     };
   },
   methods: {
@@ -213,6 +231,14 @@ a:hover {
   width: 100%;
   .slide {
     padding: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .agile {
+    .slide {
+      padding: 12px;
+    }
   }
 }
 </style>

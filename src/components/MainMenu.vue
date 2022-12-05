@@ -1,6 +1,29 @@
 <template>
   <div
-    class="fixed top-0 bottom-0 left-0 w-[200px] bg-[#17181B] z-[9] min-h-[600px]"
+    class="fixed top-0 left-0 right-0 z-[8] flex w-full bg-[#17181B] items-center sm:hidden"
+  >
+    <h3
+      class="text-[#fff] font-[400] uppercase text-[20px] flex flex-1 justify-center"
+    >
+      <router-link to="/">
+        {{ name }}
+      </router-link>
+    </h3>
+    <div
+      class="p-[12px] border-l-[1px] border-l-[#3b3c43]"
+      @click="activeMobile = !activeMobile"
+    >
+      <img width="20" src="@/assets/menu_icon.png" />
+    </div>
+  </div>
+  <div
+    class="fixed mask sm:hidden inset-0 bg-[#17181B80] z-[7]"
+    :class="{ active: activeMobile }"
+    @click="activeMobile = !activeMobile"
+  ></div>
+  <div
+    class="fixed menu top-0 bottom-0 sm:left-0 left-[-200px] w-[200px] bg-[#17181B] z-[9] min-h-[600px]"
+    :class="{ active: activeMobile }"
   >
     <div class="relative">
       <img src="@/assets/avatar.png" />
@@ -17,6 +40,7 @@
         :key="menu.id"
         :to="menu.path"
         v-slot="{ isActive }"
+        @click="activeMobile = !activeMobile"
       >
         <div
           class="group flex items-center pl-[50px] h-[50px] border-b-[#202226] border-b-[1px]"
@@ -61,5 +85,28 @@ export default {
     name: String,
     menuList: Array,
   },
+  data() {
+    return {
+      activeMobile: false,
+    };
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+@media (max-width: 640px) {
+  .menu {
+    transition: all 0.5s ease-in-out;
+    &.active {
+      transform: translateX(200px);
+    }
+  }
+  .mask {
+    transition: all 0.5s ease-in-out;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+</style>
