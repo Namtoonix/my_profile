@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="max-w-[1024px] mx-auto">
+    <div class="max-w-[1024px] mx-auto sm:px-0 px-[12px]">
       <h2
         class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] sm:text-[38px] text-[28px] font-[700] pt-[50px] sm:mb-[50px] mb-[20px]"
         :style="{ color: $store.state.color }"

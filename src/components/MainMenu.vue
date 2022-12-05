@@ -39,6 +39,7 @@
         v-for="menu in menuList"
         :key="menu.id"
         :to="menu.path"
+        :is="isDisabled ? 'span' : 'router-link'"
         v-slot="{ isActive }"
         @click="activeMobile = !activeMobile"
       >

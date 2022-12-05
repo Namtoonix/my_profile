@@ -2,9 +2,7 @@
   <div v-if="showLoading"><LoadingScreen /></div>
   <div v-else>
     <MainMenu :name="'Vu Hoang Nam'" :menuList="menuList" />
-    <div
-      class="sm:pl-[200px] w-full min-h-screen bg-[#2c2d2f] sm:px-0 px-[12px]"
-    >
+    <div class="sm:pl-[200px] w-full min-h-screen bg-[#2c2d2f]">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
