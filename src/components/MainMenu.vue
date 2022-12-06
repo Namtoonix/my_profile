@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-0 left-0 right-0 z-[8] flex w-full bg-[#17181B] items-center sm:hidden"
+    class="fixed top-0 left-0 right-0 z-[8] flex w-full bg-[#17181B] items-center lg:hidden"
   >
     <h3
       class="text-[#fff] font-[400] uppercase text-[20px] flex flex-1 justify-center"
@@ -17,12 +17,12 @@
     </div>
   </div>
   <div
-    class="fixed mask sm:hidden inset-0 bg-[#17181B80] z-[7]"
+    class="fixed mask lg:hidden inset-0 bg-[#17181B80] z-[7]"
     :class="{ active: activeMobile }"
     @click="activeMobile = !activeMobile"
   ></div>
   <div
-    class="fixed menu top-0 bottom-0 sm:left-0 left-[-200px] w-[200px] bg-[#17181B] z-[9] min-h-[600px]"
+    class="fixed menu top-0 bottom-0 lg:left-0 left-[-200px] w-[200px] bg-[#17181B] z-[9] min-h-[600px]"
     :class="{ active: activeMobile }"
   >
     <div class="relative">
@@ -95,7 +95,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .menu {
     transition: all 0.5s ease-in-out;
     &.active {

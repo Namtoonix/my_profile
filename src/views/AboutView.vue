@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    <div class="max-w-[1024px] mx-auto sm:px-0 px-[12px]">
+    <div class="max-w-[1024px] mx-auto lg:px-0 px-[12px]">
       <h2
-        class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] sm:text-[38px] text-[28px] font-[700] pt-[50px] sm:mb-[50px] mb-[20px]"
+        class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] lg:text-[38px] text-[28px] font-[700] pt-[50px] lg:mb-[50px] mb-[20px]"
         :style="{ color: $store.state.color }"
       >
         About Me.
       </h2>
       <div class="flex flex-wrap">
-        <div class="sm:w-2/3 w-full pr-[32px]">
+        <div class="lg:w-2/3 w-full pr-[32px]">
           <h3 class="text-left text-[22px] font-[700] text-white mb-[20px]">
             Front-end Developer
           </h3>
@@ -31,7 +31,7 @@
             improve the environment, which is something I’m interested in.
           </p>
         </div>
-        <div class="sm:w-1/3 w-full">
+        <div class="lg:w-1/3 w-full">
           <h3 class="text-left text-[22px] font-[700] text-white mb-[20px]">
             Personal Information
           </h3>
@@ -236,7 +236,7 @@ a:hover {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .agile {
     .slide {
       padding: 12px;

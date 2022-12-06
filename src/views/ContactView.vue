@@ -1,13 +1,13 @@
 <template>
-  <div class="max-w-[1024px] mx-auto sm:px-0 px-[12px]">
+  <div class="max-w-[1024px] mx-auto lg:px-0 px-[12px]">
     <h2
-      class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] sm:text-[38px] text-[28px] font-[700] pt-[50px] sm:mb-[50px] mb-[20px]"
+      class="text-left border-b-[1px] border-dashed border-b-[#ffffff33] lg:text-[38px] text-[28px] font-[700] pt-[50px] lg:mb-[50px] mb-[20px]"
       :style="{ color: $store.state.color }"
     >
       Contact Me.
     </h2>
     <div class="flex flex-wrap">
-      <div class="sm:w-1/3 w-full flex sm:justify-center">
+      <div class="lg:w-1/3 w-full flex lg:justify-center">
         <a
           href="mailto:vuhoangnamtnh1998@gmail.com"
           class="flex items-center cursor-pointer font-[600] hover:!text-[#ffc107]"
@@ -17,7 +17,7 @@
           vuhoangnamtnh1998@gmail.com
         </a>
       </div>
-      <div class="sm:w-1/3 w-full flex sm:justify-center">
+      <div class="lg:w-1/3 w-full flex lg:justify-center">
         <a
           href="tel:+84358281096"
           class="flex items-center cursor-pointer font-[600] hover:!text-[#ffc107]"
@@ -27,7 +27,7 @@
           035 82 81 096
         </a>
       </div>
-      <div class="sm:w-1/3 w-full flex sm:justify-center">
+      <div class="lg:w-1/3 w-full flex lg:justify-center">
         <a
           href="https://github.com/Namtoonix"
           class="flex items-center cursor-pointer font-[600] hover:!text-[#ffc107]"
@@ -37,7 +37,7 @@
           <span>NamToonix</span>
         </a>
       </div>
-      <div class="mx-auto sm:mt-[50px] mt-[20px]">
+      <div class="mx-auto lg:mt-[50px] mt-[20px]">
         <h3
           class="mx-auto w-fit text-white border-b-[2px] text-[22px] font-[600] mb-[20px] uppercase"
           :style="{ borderColor: $store.state.color }"
@@ -49,9 +49,9 @@
           ref="form"
           action="https://formspree.io/f/xeqdyayw"
           method="POST"
-          class="flex flex-wrap sm:w-[600px] w-full sm:mt-[50px] mt-[20px]"
+          class="flex flex-wrap lg:w-[600px] w-full lg:mt-[50px] mt-[20px]"
         >
-          <div class="sm:w-1/2 w-full sm:pr-[16px]">
+          <div class="lg:w-1/2 w-full lg:pr-[16px]">
             <div class="border-b-[2px] border-b-[#999]">
               <input
                 type="text"
@@ -61,7 +61,7 @@
               />
             </div>
           </div>
-          <div class="sm:w-1/2 w-full sm:pl-[16px] sm:mt-0 mt-[20px]">
+          <div class="lg:w-1/2 w-full lg:pl-[16px] lg:mt-0 mt-[20px]">
             <div class="border-b-[2px] border-b-[#999]">
               <input
                 type="email"
@@ -82,7 +82,7 @@
             </div>
           </div>
           <div
-            class="cursor-pointer sm:w-fit w-full button border-[2px] px-[20px] py-[10px] sm:mt-[50px] mt-[20px] hover:!text-white transition ease-in duration-300"
+            class="cursor-pointer lg:w-fit w-full button border-[2px] px-[20px] py-[10px] lg:mt-[50px] mt-[20px] hover:!text-white transition ease-in duration-300"
             :style="styleObject"
           >
             <button @click="submitForm">Send</button>
@@ -97,7 +97,7 @@
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        class="sm:mt-[50px] mt-[30px]"
+        class="lg:mt-[50px] mt-[30px]"
       ></iframe>
     </div>
   </div>

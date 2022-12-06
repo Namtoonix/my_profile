@@ -1,6 +1,6 @@
 <template>
   <div
-    class="settings fixed sm:top-[50px] top-[10%] right-[10px] z-[10]"
+    class="settings fixed lg:top-[50px] top-[10%] right-[10px] z-[10]"
     @focusout="showSetting = false"
     tabindex="0"
   >
