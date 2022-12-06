@@ -8,13 +8,13 @@
       </h1>
       <h3 class="text-[28px] text-white">
         I'm a
-        <span class="font-[600]">Front-end Developer</span>
-        with
-        <span
-          class="font-[600] border-b-[2px]"
-          :style="{ borderColor: $store.state.color }"
-          >{{ typeValue }}</span
+        <span class="font-[600]" :style="{ color: $store.state.color }"
+          >Front-end Developer</span
         >
+        with
+        <span class="font-[600]" :style="{ color: $store.state.color }">{{
+          typeValue
+        }}</span>
         <span class="blinking-cursor">|</span>
         <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
       </h3>

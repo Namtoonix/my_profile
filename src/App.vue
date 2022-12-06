@@ -77,7 +77,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Roboto, sans-serif;
+  font-family: "Playfair Display", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
