@@ -76,14 +76,13 @@
               <textarea
                 type="text"
                 name="message"
-                placeholder="
-How can we help you?"
+                placeholder="How can I help you?"
                 class="w-full py-[5px] outline-none text-white !bg-transparent"
               ></textarea>
             </div>
           </div>
           <div
-            class="cursor-pointer button border-[2px] px-[20px] py-[10px] sm:mt-[50px] mt-[20px] hover:!text-white transition ease-in duration-300"
+            class="cursor-pointer sm:w-fit w-full button border-[2px] px-[20px] py-[10px] sm:mt-[50px] mt-[20px] hover:!text-white transition ease-in duration-300"
             :style="styleObject"
           >
             <button @click="submitForm">Send</button>
