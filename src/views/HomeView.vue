@@ -1,6 +1,6 @@
 <template>
   <div
-    class="home min-h-screen flex justify-center items-center before:absolute before:inset-0 before:bg-[#151515] before:opacity-50 before:content-['']"
+    class="home min-h-screen flex justify-center items-center before:absolute before:top-0 before:bottom-[-50px] before:left-0 before:right-0 before:bg-[#151515] before:opacity-50 before:content-['']"
   >
     <div class="z-[2]">
       <h1 class="text-[62px] text-[#fff] font-[600] font-dancing">
