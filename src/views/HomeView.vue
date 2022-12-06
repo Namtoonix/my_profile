@@ -7,7 +7,7 @@
       <h1 class="text-[62px] text-[#fff] font-[600] font-dancing">
         Vu Hoang Nam
       </h1>
-      <h3 class="text-[28px] text-white">
+      <h3 class="text-[28px] text-white px-[8px]">
         I'm a
         <span class="font-[600]" :style="{ color: $store.state.color }"
           >Front-end Developer</span
