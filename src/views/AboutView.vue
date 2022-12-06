@@ -172,6 +172,8 @@ export default {
       myOptions: {
         navButtons: false,
         slidesToShow: 2,
+        autoplay: true,
+        autoplaySpeed: 2000,
         responsive: [
           {
             breakpoint: 640,
