@@ -158,8 +158,8 @@ const educationData = [
     desc: "Ho Chi Minh City University of Technology",
     content:
       "Participate in learning and scientific research to develop yourself in best major technical university in Vietnam",
-    startPeriod: "06/2020",
-    endPeriod: "06/2016",
+    startPeriod: "06/2016",
+    endPeriod: "06/2020",
   },
 ];
 
